@@ -1,0 +1,40 @@
+{
+  "name": "checksum-tools",
+  "displayName": "checksum-tools",
+  "description": "Checksum tools",
+  "version": "1.0.0",
+  "main": "./out/extension.js",
+  "author": "social@jcarchives.com",
+  "license": "ISC",
+  "engines": {
+    "vscode": "^1.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/vscode": "^1.77.0",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "crypto": "^1.0.1",
+    "eslint": "^8.37.0",
+    "typescript": "^5.0.3",
+    "vscode": "^1.1.37"
+  },
+  "scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint \"src/**/*.ts\"",
+		"watch": "tsc -watch -p ./"
+	},
+  "contributes": {
+    "commands": [
+      {
+				"command": "jcarchives.checksum-plugin.copySha256",
+				"title": "Checksum: Copy sha256"
+			},
+      {
+				"command": "jcarchives.checksum-plugin.copySha512",
+				"title": "Checksum: Copy sha512"
+			}
+    ]
+  }
+}
